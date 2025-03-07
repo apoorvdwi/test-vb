@@ -13,8 +13,10 @@ Const MAINFRAME_PASSWORD = "password"  ' Replace with actual password
 ' API Configuration
 Const API_BASE_URL = "https://api.example.com"
 Const API_KEY = "your-api-key-here"  ' Replace with your actual API key
+Const AUTH_TOKEN = "your-auth-token-here"  ' Replace with your actual auth token
 Const API_ENDPOINT = API_BASE_URL & "/data"
 Const API_TIMEOUT = 30  ' Timeout in seconds
+Const AUTH_TYPE = "Bearer"  ' Authentication type (Bearer, Basic, etc.)
 
 ' File System Paths
 Const OUTPUT_DIRECTORY = "output"

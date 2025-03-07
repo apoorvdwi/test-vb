@@ -15,7 +15,14 @@ Function MakeAPICall(url, method, data)
     
     ' Set request headers
     http.SetRequestHeader "Content-Type", "application/json"
-    http.SetRequestHeader "Authorization", "Bearer " & API_KEY
+    
+    ' Set authorization header with token if available
+    If Len(AUTH_TOKEN) > 0 Then
+        http.SetRequestHeader "Authorization", AUTH_TYPE & " " & AUTH_TOKEN
+    ElseIf Len(API_KEY) > 0 Then
+        ' Fall back to API key if token is not available
+        http.SetRequestHeader "Authorization", "Bearer " & API_KEY
+    End If
     
     ' Send the request with data if provided
     If method = "GET" Or IsEmpty(data) Then
